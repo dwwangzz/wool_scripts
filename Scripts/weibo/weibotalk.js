@@ -1,6 +1,7 @@
 /**********
  微博超话签到修改版
  需要12.2.1以下版本抓包
+ 更新时间：2025-05-27 22:00:00
 
 🐬作者
 @Evilbutcher。 https://github.com/evilbutcher
@@ -11,7 +12,7 @@
 ***********************************
 【配置步骤，请认真阅读，每一个细节都很重要】
 ***********************************
-1. 根据你当前的软件，配置好srcipt。由于是远程文件，记得顺便更新文件。
+1. 根据你当前的软件，配置好script。由于是远程文件，记得顺便更新文件。
 2. 打开微博APP --> 底部栏“我的“  -->  中间的”超话社区“  --> 底部栏"我的" --> ”关注“， 弹出通知，提示获取已关注超话链接成功。
 3. 点进一个超话页面，手动签到一次。弹出通知，提示获取超话签到链接成功。 若之前所有已经签到，请关注一个新超话进行签到。
 4. 回到quanx等软件，关掉获取cookie的rewrite。（loon是关掉获取cookie的脚本）
@@ -203,12 +204,12 @@ function get_page_number() {
 //获取超话签到id
 function get_talk_id(page) {
     let getlisturl = $.listurl.replace(/&page=.*?&/, "&page=" + page + "&");
-    console.log(getlisturl);
+    // console.log(getlisturl);
     let idrequest = {
         url: getlisturl,
         header: $.listheaders
     };
-    console.log(idrequest)
+    // console.log(idrequest)
     return new Promise((resolve) => {
         $.get(idrequest, (error, response, data) => {
             if (error) {
@@ -259,16 +260,16 @@ function checkin(id, name) {
             name = name.replace(/超话/, "")
             if (response.statusCode == 200) {
                 msg_info = JSON.parse(response.body);
-                if (msg_info.hasOwnProperty('error_msg')) {
+                console.log(response.body);
+                if (msg_info.hasOwnProperty('errmsg')) {
                     $.failNum += 1;
-                    error_code = msg_info.error_msg.match(/\((\d*?)\)/)[1]
+                    error_code = msg_info.errcode;
                     if (error_code == 382004) {
                         $.message.push(`【${name}】：✨今天已签到`);
-                        console.log(`【${name}】：${msg_info.error_msg}`);
+                        console.log(`【${name}】：${msg_info.errmsg}`);
                     } else {
-                        $.message.push(`【${name}】：${msg_info.error_msg}`);
-                        console.log(`【${name}】："未知错误⚠️ 该请求的返回情况如下"`);
-                        console.log(response.body)
+                        $.message.push(`【${name}】：${msg_info.errmsg}`);
+                        console.log(`【${name}】："发生错误⚠️ 该请求的返回情况如下"`);
                     }
                 } else if (msg_info.hasOwnProperty('result') && msg_info.result == 1) {
                     $.successNum += 1
@@ -276,8 +277,8 @@ function checkin(id, name) {
                     console.log(`【${name}】：${msg_info.button.name}`);
                 } else {
                     $.failNum += 1
-                    $.message.push(`【${name}】：未知错误⚠️`);
-                    console.log(`【${name}】："未知错误⚠️ 该请求的返回情况如下"`);
+                    $.message.push(`【${name}】：发生错误⚠️`);
+                    console.log(`【${name}】："发生错误⚠️ 该请求的返回情况如下"`);
                     console.log(response.body)
                 }
             } else if ((response.statusCode == 418)) {
@@ -290,8 +291,8 @@ function checkin(id, name) {
                 console.log(`【${name}】："需要身份验证，请稍后再试"`);
             } else {
                 $.failNum += 1
-                $.message.push(`【${name}】：未知错误⚠️`);
-                console.log(`【${name}】："未知错误⚠️ 该请求的返回情况如下"`);
+                $.message.push(`【${name}】：发生错误⚠️`);
+                console.log(`【${name}】："发生错误⚠️ 该请求的返回情况如下"`);
                 console.log(JSON.stringify(response))
             }
             resolve();

@@ -5,8 +5,54 @@
   "icon": "https://avatars.githubusercontent.com/u/57740735?s=60&v=4",
   "repo": "https://github.com/fmz200/wool_scripts",
   "desc": "订阅大多都支持多账号，协定数据格式如下：有主键的用JSON，没有主键的拼接用#分割用@。\n例如{\"uid1\": \"token1\", \"uid2\": \"token2\",\"uid3\": \"token3\"}和uid1#token1@uid2#token2@uid3#token3",
-  "date": "更新日期：2024-07-29 21:00:00",
+  "date": "更新日期：2025-05-27 22:00:00",
   "apps": [
+    {
+      "id": "fmz200_xiaohongshu",
+      "name": "小红书功能增强",
+      "keys": [
+        "fmz200.xiaohongshu.imageQuality",
+        "fmz200.xiaohongshu.feed.rsp",
+        "redBookVideoFeed",
+        "redBookVideoFeedUnlock"
+      ],
+      "descs_html": [
+        "可选图片质量，保存无水印图片和视频"
+      ],
+      "settings": [
+        {
+          "id": "fmz200.xiaohongshu.imageQuality",
+          "name": "小红书无水印图片保存质量",
+          "val": "highPixels",
+          "type": "selects",
+          "items": [
+            {
+              "key": "original",
+              "label": "原始分辨率 (图片占用空间大)"
+            },
+            {
+              "key": "highPixels",
+              "label": "高像素输出 (图片占用空间小)"
+            },
+            {
+              "key": "highQuality",
+              "label": "高质量压缩"
+            },
+            {
+              "key": "medium",
+              "label": "平衡配置"
+            }
+          ],
+          "desc": "图片质量可选：原始分辨率PNG，高像素输出HEIF，高质量压缩，平衡配置"
+        }
+      ],
+      "icons": [
+        "https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/chxm1023/xiaohongshu.png",
+        "https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/chxm1023/xiaohongshu.png"
+      ],
+      "author": "@fmz200",
+      "repo": "https://github.com/fmz200/wool_scripts"
+    },
     {
       "id": "fmz200_aliyun",
       "name": "阿里云盘cookie",
@@ -283,6 +329,39 @@
       ]
     },
     {
+      "id": "fmz200_chery_account",
+      "name": "奇瑞汽车App签到",
+      "keys": [
+        "fmz200_chery_account"
+      ],
+      "descs_html": [
+        "打开APP点击“我的”页面获取，可到代理工具脚本日志中查看token"
+      ],
+      "settings": [
+        {
+          "id": "fmz200_chery_account",
+          "name": "",
+          "val": "",
+          "desc": "",
+          "type": "textarea",
+          "autoGrow": true,
+          "rows": 8
+        }
+      ],
+      "author": "@fmz200",
+      "repo": "https://github.com/fmz200/wool_scripts",
+      "scripts": [
+        {
+          "name": "奇瑞汽车App签到",
+          "script": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/chery/cheryAppSignin.js"
+        }
+      ],
+      "icons": [
+        "https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/chery.png",
+        "https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/chery.png"
+      ]
+    },
+    {
       "id": "fmz200_airport_notice",
       "name": "获取机场公告",
       "keys": [
@@ -332,35 +411,34 @@
     },
     {
       "id": "fmz200_testflight",
-      "name": "TF监控",
+      "name": "TF自动加入",
       "keys": [
-        "appkey",
-        "testflight_isnotify"
+        "fmz200_TF_APP_ID",
+        "fmz200_TF_header"
       ],
       "settings": [
         {
-          "id": "appkey",
-          "name": "监控appkey",
+          "id": "fmz200_TF_APP_ID",
+          "name": "",
           "val": "",
           "type": "textarea",
-          "placeholder": "VCIvwk2g,1SyedSId",
+          "placeholder": "示例：VCIvwk2g,1SyedSId",
           "autoGrow": true,
           "rows": 1,
           "desc": "以英文逗号分隔多个key"
         },
         {
-          "id": "testflight_isnotify",
-          "name": "是否静默通知",
+          "id": "fmz200_TF_header",
+          "name": "",
           "val": "",
-          "type": "boolean",
-          "placeholder": "true or false",
+          "type": "textarea",
           "autoGrow": true,
-          "rows": 1,
-          "desc": "没有tf位置将不会通知"
+          "rows": 4,
+          "desc": ""
         }
       ],
-      "author": "@syzzzf",
-      "repo": "https://github.com/songyangzz/QuantumultX/blob/master/testflight.js",
+      "author": "@fmz200",
+      "repo": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/TestFlight/AutoJoinTF.js",
       "icons": [
         "https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/erdongchanyo/TestFlight.png",
         "https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/erdongchanyo/TestFlight.png"
@@ -683,6 +761,39 @@
       ]
     },
     {
+      "id": "fmz200_weibo_token",
+      "name": "微博每日签到token",
+      "keys": [
+        "fmz200_weibo_token"
+      ],
+      "descs_html": [
+        "打开微博会随缘获取，暂时不知道触发条件"
+      ],
+      "settings": [
+        {
+          "id": "fmz200_weibo_token",
+          "name": "",
+          "val": "",
+          "desc": "",
+          "type": "textarea",
+          "autoGrow": true,
+          "rows": 8
+        }
+      ],
+      "author": "@fmz200",
+      "repo": "https://github.com/fmz200/wool_scripts",
+      "scripts": [
+        {
+          "name": "微博每日签到",
+          "script": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_signin.js"
+        }
+      ],
+      "icons": [
+        "https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Weibo-00.png",
+        "https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Weibo-00.png"
+      ]
+    },
+    {
       "id": "fmz200_weibo_talk",
       "name": "微博超话签到",
       "desc_html": "⚠️使用说明</br>详情【<a href='https://github.com/toulanboy/scripts/blob/master/weibo/weibotalk.js'><font class='red--text'>点我查看</font></a>】",
@@ -690,6 +801,7 @@
         "wb_delete_cookie",
         "wb_msg_max_num",
         "wb_request_time",
+        "fmz200_weibotalk_token",
         "evil_tokenurl",
         "evil_tokenheaders",
         "evil_tokencheckinurl",
@@ -720,6 +832,14 @@
           "val": "",
           "type": "text",
           "desc": "【签到间隔，单位ms】，若超话过多，建议填1000ms以上。"
+        },
+        {
+          "id": "fmz200_weibotalk_token",
+          "name": "多账号token",
+          "val": "",
+          "type": "textarea",
+          "autoGrow": true,
+          "rows": 4
         },
         {
           "id": "evil_tokenurl",

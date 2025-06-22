@@ -5,7 +5,7 @@
 #!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/gif/naisi-01.gif
 #!raw-url=https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/filter/fenliu.list
 #!tg-group=https://t.me/lanjieguanggao
-#!date=2024-10-18 23:10:00
+#!date=2025-06-20 23:40:17
 #!support=约9392行
 #!proxy-select=reject
 #############################################
@@ -450,7 +450,10 @@ host-suffix, ad.duoduo.link, reject
 
 # > 盯盯拍 广告联盟已包含
 
-
+# > 叮咚买菜
+host, trackercollect.ddxq.mobi, reject
+host, ddfs-public.ddimg.mobi, reject
+host, rttrack.ddxq.mobi, reject
 
 # >>>>>>>>>>>>>>> ✅ E ✅ <<<<<<<<<<<<<<
 
@@ -804,6 +807,9 @@ host-suffix, d.meituan.net, reject
 host, adui.tg.meitu.com, reject
 host, aaid.uyunad.com, reject
 
+# > 美柚
+host, ad.seeyouyima.com, reject
+
 # > 买单吧
 host-suffix, c-hzgt2.getui.com, reject
 host-suffix, c-hzgt2.getui.com, reject
@@ -831,11 +837,12 @@ host, v1.log.moji.com, reject
 # > 咪咕视频
 host-suffix, ad.cmvideo.cn, reject
 host, ggc.cmvideo.cn, reject
-host, ggic03.miguvideo.com, reject
-host, ggmk.miguvideo.com, reject
 host, ggv.cmvideo.cn, reject
 host, ggx.cmvideo.cn, reject
 host, ggx03.miguvideo.com, reject
+host, ggic03.miguvideo.com, reject
+host, ggmk.miguvideo.com, reject
+host, ggadoffline.miguvideo.com, reject
 
 # > 小米米家
 host, sdkconfig.ad.xiaomi.com, reject
@@ -968,6 +975,10 @@ host-suffix, android.rqd.qq.com, reject
 host-suffix, e.qq.com, reject
 host-suffix, beacon.qq.com, reject
 host-suffix, v.gdt.qq.com, reject
+host, amsweb-cdn-gz-1258344696.file.myqcloud.com, REJECT
+host, wallpaper-1258344696.file.myqcloud.com, REJECT
+host, xs.gdt.qq.com,REJECT
+IP-CIDR, 120.222.240.171/32, REJECT
 
 # > 蜻蜓FM
 host, ad.qingting.fm, reject
@@ -1139,25 +1150,36 @@ host-suffix, m-adash.m.taobao.com, reject
 host-suffix, adashbc.m.taobao.com, reject
 
 # > 腾讯视频
-host, adsmind.gdtimg.com, reject
-host, btrace.qq.com, reject
-host, btrace.video.qq.com, reject
-host, info4.video.qq.com, reject
-host, info6.video.qq.com, reject
-host, ios.video.mpush.qq.com, reject
-host, mtrace.qq.com, reject
-host, p.l.qq.com, reject
-host, pgdt.gtimg.cn, reject
-host, rpt.gdt.qq.com, reject
-host-suffix, trace.qq.com, reject
-host-suffix, tetrack.qq.com, reject
-host-suffix, tpns.tencent.com, reject
-host-suffix, api.poll.video.qq.com, reject
-host-suffix, static-res.qq.com, reject
-host-suffix, stat.tpns.tencent.com, reject
-host, h.trace.qq.com, reject
-host-keyword, omgmta.qq.com, reject
-host-keyword, omgmta1.qq.com, reject
+# 去除开屏，播放，暂停，青少年等广告。开启下面的规则播放时会有10秒左右的卡顿
+# host,pgdt.gtimg.cn,REJECT
+# host,ugchsy.gtimg.com,REJECT
+# host,adsmind.gdtimg.com,REJECT
+# host,btrace.video.qq.com,REJECT
+# host,info4.video.qq.com,REJECT
+# host,info6.video.qq.com,REJECT
+# host-SUFFIX,api.poll.video.qq.com,REJECT
+# host,activity.video.qq.com,REJECT
+# host,ios.video.mpush.qq.com,REJECT
+# host,p.l.qq.com,REJECT
+# host,rpt.gdt.qq.com,REJECT
+# host-SUFFIX,trace.qq.com,REJECT
+# host-SUFFIX,tetrack.qq.com,REJECT
+# host-SUFFIX,tpns.tencent.com,REJECT
+# host-SUFFIX,stat.tpns.tencent.com,REJECT
+# host-SUFFIX,static-res.qq.com,REJECT
+# host-SUFFIX,omgmta.qq.com,REJECT
+# host-SUFFIX,omgmta1.qq.com,REJECT
+# host,tux.qq.com,REJECT
+# host,iacc.qq.com,REJECT
+# host,p2.l.qq.com,REJECT
+# host,v3.gdt.qq.com,REJECT
+# host,rmonitor.qq.com,REJECT
+# host,xs.gdt.qq.com,REJECT
+# host,aegis.qq.com,REJECT
+# host,rdelivery.qq.com,REJECT
+# host,wallpaper-1258344696.file.myqcloud.com,REJECT
+# host,wallpaper-test-1258344696.file.myqcloud.com,REJECT
+# IP-CIDR,183.201.213.194/24,REJECT
 
 # >  腾讯
 host-suffix, news.ssp.qq.com, reject
@@ -1548,8 +1570,14 @@ host, 39d83s.com, reject
 # > 小利生活
 host-keyword, mpos-pic.helipay.com, reject
 
+# > 小爱音箱
+host, mistat.xiaomi.com, reject
+
 # > 晓晓优选
 host-SUFFIX, api-htp.beizi.biz, REJECT
+host-suffix, yfanads.com, reject
+host-suffix, 1rtb.net, reject
+host-suffix, adwangmai.com, reject
 
 # > 新浪
 host-suffix, beacon.sina.com.cn, reject
@@ -1573,6 +1601,7 @@ host, cm-10-138.getui.com, reject
 host, sdk.open.talk.getui.net, reject
 host, sdk-conf.getui.com, reject
 host, switch.cup.com.cn, reject
+host, ads.cup.com.cn, reject
 
 # > 雅虎
 host-suffix, adserver.yahoo.com, reject
@@ -1586,12 +1615,27 @@ host, ads.yahoo.com, reject
 host, ads.yahoo.de, reject
 
 # > 优酷
+#host-suffix, sm.cn, reject
+host-suffix, acz.youku.com,REJECT
+host-suffix, adx-core.youku.com,REJECT
+host-suffix, adx-open-service.youku.com,REJECT
+host-suffix, rhdc-acs.youku.com,REJECT
+host-suffix, partner.uc.cn,REJECT
+host-suffix, ubixioe.com,REJECT
+host-suffix, uczzd.cn,REJECT
+host-suffix, ranfenghd.com,REJECT
+host-suffix, zconfig.alibabausercontent.com,REJECT
+host-suffix, bgg.baidu.com,REJECT
+host-suffix, gdt.qq.com,REJECT
+host-suffix, sdk.e.qq.com,REJECT
+host-suffix, mazu.m.qq.com,REJECT
+host-suffix, snowflake.qq.com,REJECT
+host-suffix, cad.youku.com,REJECT
+host-suffix, sjarvis.taobao.com,REJECT
 host, adsmind.ugdtimg.com, reject
 host, amdc.m.youku.com, reject
 host, apiv4-iyes.youku.com, reject
 host, httpdns.alicdn.com, reject
-host, huichuan-mc.sm.cn, reject
-host, huichuan.sm.cn, reject
 host, iyes.youku.com, reject
 host, m-vali.cp31.ott.cibntv.net, reject
 host, mc.atm.youku.com, reject
@@ -1644,6 +1688,7 @@ host-suffix, val.api.youku.com, reject
 host-suffix, wan.youku.com, reject
 host-suffix, ykatr.youku.com, reject
 host-suffix, ykrec.youku.com, reject
+IP-CIDR, 223.111.27.248/32, REJECT
 
 # > 易车
 host, adx.yiche.com, reject
@@ -4242,7 +4287,6 @@ host-suffix, noberlmall.com, reject
 host-suffix, nongsalei.com, reject
 host-suffix, nowskip.com, reject
 host-suffix, nr1234.com, reject
-host-suffix, ntalker.com, reject
 host-suffix, nterbx.com, reject
 host-suffix, nthyn.com, reject
 host-suffix, nvrentao8.com, reject
@@ -5616,7 +5660,6 @@ host-suffix, b1.c1km4.com, reject
 host-suffix, ad.cacafly.com, reject
 host-suffix, vip.cainiaofx.com, reject
 host-suffix, apollo.caixin.com, reject
-host-suffix, gg.caixin.com, reject
 host-suffix, logstat.caixin.com, reject
 host-suffix, promote.caixin.com, reject
 host-suffix, ad.caiyunapp.com, reject

@@ -9,7 +9,7 @@
 #!system = iOS, iPadOS
 #!system_version =
 #!loon_version =
-#!date=2024-10-18 23:10:00
+#!date=2025-06-20 23:40:17
 #!support=约9392行
 #!proxy-select=REJECT
 #############################################
@@ -444,7 +444,10 @@ DOMAIN-SUFFIX,ad.duoduo.link
 
 # > 盯盯拍 广告联盟已包含
 
-
+# > 叮咚买菜
+DOMAIN, trackercollect.ddxq.mobi
+DOMAIN, ddfs-public.ddimg.mobi
+DOMAIN, rttrack.ddxq.mobi
 
 # >>>>>>>>>>>>>>> ✅ E ✅ <<<<<<<<<<<<<<
 
@@ -783,6 +786,9 @@ DOMAIN-SUFFIX,d.meituan.net
 DOMAIN, adui.tg.meitu.com
 DOMAIN, aaid.uyunad.com
 
+# > 美柚
+DOMAIN,ad.seeyouyima.com
+
 # > 买单吧
 DOMAIN-KEYWORD,c-hzgt2.getui.com
 
@@ -809,11 +815,12 @@ DOMAIN, v1.log.moji.com
 # > 咪咕视频
 DOMAIN-SUFFIX,ad.cmvideo.cn
 DOMAIN, ggc.cmvideo.cn
-DOMAIN, ggic03.miguvideo.com
-DOMAIN, ggmk.miguvideo.com
 DOMAIN, ggv.cmvideo.cn
 DOMAIN, ggx.cmvideo.cn
 DOMAIN, ggx03.miguvideo.com
+DOMAIN, ggic03.miguvideo.com
+DOMAIN, ggmk.miguvideo.com
+DOMAIN, ggadoffline.miguvideo.com
 
 # > 小米米家
 DOMAIN, sdkconfig.ad.xiaomi.com
@@ -922,13 +929,16 @@ DOMAIN, tmeadcomm.y.qq.com
 DOMAIN, ad.tencentmusic.com
 DOMAIN, adstats.tencentmusic.com
 DOMAIN, tmead.y.qq.com
-DOMAIN-SUFFIX,rqd.qq.com
-DOMAIN-SUFFIX,wup.imtt.qq.com
-DOMAIN-SUFFIX,gdt.qq.com
-DOMAIN-SUFFIX,android.rqd.qq.com
-DOMAIN-SUFFIX,e.qq.com
-DOMAIN-SUFFIX,beacon.qq.com
-DOMAIN-SUFFIX,v.gdt.qq.com
+DOMAIN-SUFFIX, rqd.qq.com
+DOMAIN-SUFFIX, wup.imtt.qq.com
+DOMAIN-SUFFIX, gdt.qq.com
+DOMAIN-SUFFIX, android.rqd.qq.com
+DOMAIN-SUFFIX, e.qq.com
+DOMAIN-SUFFIX, v.gdt.qq.com
+DOMAIN, amsweb-cdn-gz-1258344696.file.myqcloud.com
+DOMAIN, wallpaper-1258344696.file.myqcloud.com
+DOMAIN, xs.gdt.qq.com
+IP-CIDR, 120.222.240.171/32, no-resolve
 
 # > 蜻蜓FM
 DOMAIN, ad.qingting.fm
@@ -1093,25 +1103,36 @@ DOMAIN-SUFFIX,m-adash.m.taobao.com
 DOMAIN-SUFFIX,adashbc.m.taobao.com
 
 # > 腾讯视频
-DOMAIN, adsmind.gdtimg.com
-DOMAIN, btrace.qq.com
-DOMAIN, btrace.video.qq.com
-DOMAIN, info4.video.qq.com
-DOMAIN, info6.video.qq.com
-DOMAIN, ios.video.mpush.qq.com
-DOMAIN, mtrace.qq.com
-DOMAIN, p.l.qq.com
-DOMAIN, pgdt.gtimg.cn
-DOMAIN, rpt.gdt.qq.com
-DOMAIN-SUFFIX,trace.qq.com
-DOMAIN-SUFFIX,tetrack.qq.com
-DOMAIN-SUFFIX,tpns.tencent.com
-DOMAIN-SUFFIX,api.poll.video.qq.com
-DOMAIN-SUFFIX,static-res.qq.com
-DOMAIN-SUFFIX,stat.tpns.tencent.com
-DOMAIN, h.trace.qq.com
-DOMAIN-KEYWORD,omgmta.qq.com
-DOMAIN-KEYWORD,omgmta1.qq.com
+# 去除开屏，播放，暂停，青少年等广告。开启下面的规则播放时会有10秒左右的卡顿
+# DOMAIN,pgdt.gtimg.cn,REJECT
+# DOMAIN,ugchsy.gtimg.com,REJECT
+# DOMAIN,adsmind.gdtimg.com,REJECT
+# DOMAIN,btrace.video.qq.com,REJECT
+# DOMAIN,info4.video.qq.com,REJECT
+# DOMAIN,info6.video.qq.com,REJECT
+# DOMAIN-SUFFIX,api.poll.video.qq.com,REJECT
+# DOMAIN,activity.video.qq.com,REJECT
+# DOMAIN,ios.video.mpush.qq.com,REJECT
+# DOMAIN,p.l.qq.com,REJECT
+# DOMAIN,rpt.gdt.qq.com,REJECT
+# DOMAIN-SUFFIX,trace.qq.com,REJECT
+# DOMAIN-SUFFIX,tetrack.qq.com,REJECT
+# DOMAIN-SUFFIX,tpns.tencent.com,REJECT
+# DOMAIN-SUFFIX,stat.tpns.tencent.com,REJECT
+# DOMAIN-SUFFIX,static-res.qq.com,REJECT
+# DOMAIN-SUFFIX,omgmta.qq.com,REJECT
+# DOMAIN-SUFFIX,omgmta1.qq.com,REJECT
+# DOMAIN,tux.qq.com,REJECT
+# DOMAIN,iacc.qq.com,REJECT
+# DOMAIN,p2.l.qq.com,REJECT
+# DOMAIN,v3.gdt.qq.com,REJECT
+# DOMAIN,rmonitor.qq.com,REJECT
+# DOMAIN,xs.gdt.qq.com,REJECT
+# DOMAIN,aegis.qq.com,REJECT
+# DOMAIN,rdelivery.qq.com,REJECT
+# DOMAIN,wallpaper-1258344696.file.myqcloud.com,REJECT
+# DOMAIN,wallpaper-test-1258344696.file.myqcloud.com,REJECT
+# IP-CIDR,183.201.213.194/24,REJECT,no-resolve
 
 # >  腾讯
 DOMAIN-SUFFIX,news.ssp.qq.com
@@ -1201,8 +1222,7 @@ DOMAIN-SUFFIX,tajs.qq.com
 DOMAIN-SUFFIX,fusion.qq.com
 DOMAIN-SUFFIX,ios.bugly.qq.com
 DOMAIN, safebrowsing.urlsec.qq.com
-DOMAIN-SUFFIX,oth.str.mdt.qq.com
-DOMAIN-SUFFIX,l.qq.com
+DOMAIN, oth.str.mdt.qq.com
 DOMAIN, adsmind.apdcdn.tc.qq.com
 DOMAIN, adsmind.tc.qq.com
 DOMAIN, livep.l.t002.ottcn.com
@@ -1467,8 +1487,14 @@ DOMAIN, 39d83s.com
 # > 小利生活
 DOMAIN-KEYWORD,mpos-pic.helipay.com
 
+# > 小爱音箱
+DOMAIN, mistat.xiaomi.com
+
 # > 晓晓优选
-DOMAIN-SUFFIX,api-htp.beizi.biz
+DOMAIN-SUFFIX, api-htp.beizi.biz
+DOMAIN-SUFFIX, yfanads.com
+DOMAIN-SUFFIX, 1rtb.net
+DOMAIN-SUFFIX, adwangmai.com
 
 # > 新浪
 DOMAIN-SUFFIX,beacon.sina.com.cn
@@ -1489,6 +1515,7 @@ DOMAIN, sdk.open.talk.getui.net
 DOMAIN, sdk-conf.getui.com
 DOMAIN, switch.cup.com.cn
 DOMAIN, tysdk.95516.com
+DOMAIN, ads.cup.com.cn
 
 # > 雅虎
 DOMAIN-SUFFIX,adserver.yahoo.com
@@ -1502,26 +1529,43 @@ DOMAIN, ads.yahoo.com
 DOMAIN, ads.yahoo.de
 
 # > 优酷
+#DOMAIN-SUFFIX, sm.cn
+DOMAIN-SUFFIX, acz.youku.com
+DOMAIN-SUFFIX, adx-core.youku.com
+DOMAIN-SUFFIX, adx-open-service.youku.com
+DOMAIN-SUFFIX, rhdc-acs.youku.com
+DOMAIN-SUFFIX, partner.uc.cn
+DOMAIN-SUFFIX, ubixioe.com
+DOMAIN-SUFFIX, uczzd.cn
+DOMAIN-SUFFIX, ranfenghd.com
+DOMAIN-SUFFIX, zconfig.alibabausercontent.com
+DOMAIN-SUFFIX, bgg.baidu.com
+DOMAIN-SUFFIX, gdt.qq.com
+DOMAIN-SUFFIX, sdk.e.qq.com
+DOMAIN-SUFFIX, mazu.m.qq.com
+DOMAIN-SUFFIX, snowflake.qq.com
+DOMAIN-SUFFIX, cad.youku.com
+DOMAIN-SUFFIX, sjarvis.taobao.com
 DOMAIN, adsmind.ugdtimg.com
 DOMAIN, amdc.m.youku.com
 DOMAIN, apiv4-iyes.youku.com
 DOMAIN, httpdns.alicdn.com
-DOMAIN, huichuan-mc.sm.cn
-DOMAIN, huichuan.sm.cn
 DOMAIN, iyes.youku.com
-DOMAIN, m-vali.cp31.ott.cibntv.net
 DOMAIN, mc.atm.youku.com
+DOMAIN, pl.cp31.ott.cibntv.net
+DOMAIN, m-vali.cp31.ott.cibntv.net
 DOMAIN, vali-g1.cp31.ott.cibntv.net
 DOMAIN, vali-ugc.cp31.ott.cibntv.net
 DOMAIN, yk-ssp.ad.youku.com
 DOMAIN, ykad-data.youku.com
 DOMAIN, ad.mobile.youku.com
-DOMAIN, pl.cp31.ott.cibntv.net
 DOMAIN-SUFFIX,atm.youku.com
 DOMAIN-SUFFIX,actives.youku.com
 DOMAIN-SUFFIX,ad.api.3g.tudou.com
 DOMAIN-SUFFIX,ad.api.3g.youku.com
 DOMAIN-SUFFIX,ad.api.mobile.youku.com
+DOMAIN-SUFFIX,store.tv.api.3g.youku.com
+DOMAIN-SUFFIX,store.xl.api.3g.youku.com
 DOMAIN-SUFFIX,a-dxk.play.api.3g.youku.com
 DOMAIN-SUFFIX,b.smartvideo.youku.com
 DOMAIN-SUFFIX,c.yes.youku.com
@@ -1550,8 +1594,6 @@ DOMAIN-SUFFIX,s.p.youku.com
 DOMAIN-SUFFIX,sdk.api.gamex.mobile.youku.com
 DOMAIN-SUFFIX,sdk.m.youku.com
 DOMAIN-SUFFIX,stat.youku.com
-DOMAIN-SUFFIX,store.tv.api.3g.youku.com
-DOMAIN-SUFFIX,store.xl.api.3g.youku.com
 DOMAIN-SUFFIX,tdrec.youku.com
 DOMAIN-SUFFIX,test.ott.youku.com
 DOMAIN-SUFFIX,urchin.lstat.youku.com
@@ -1560,6 +1602,7 @@ DOMAIN-SUFFIX,val.api.youku.com
 DOMAIN-SUFFIX,wan.youku.com
 DOMAIN-SUFFIX,ykatr.youku.com
 DOMAIN-SUFFIX,ykrec.youku.com
+IP-CIDR, 223.111.27.248/32, no-resolve
 
 # > 易车
 DOMAIN, adx.yiche.com
@@ -4148,7 +4191,6 @@ DOMAIN-SUFFIX, noberlmall.com
 DOMAIN-SUFFIX, nongsalei.com
 DOMAIN-SUFFIX, nowskip.com
 DOMAIN-SUFFIX, nr1234.com
-DOMAIN-SUFFIX, ntalker.com
 DOMAIN-SUFFIX, nterbx.com
 DOMAIN-SUFFIX, nthyn.com
 DOMAIN-SUFFIX, nvrentao8.com
@@ -4413,7 +4455,6 @@ DOMAIN-SUFFIX, steelhousemedia.com
 DOMAIN-SUFFIX, stg8.com
 DOMAIN-SUFFIX, stn88.com
 DOMAIN-SUFFIX, stocksbsc.com
-DOMAIN-SUFFIX, streamtape.com
 DOMAIN-SUFFIX, subswin.com
 DOMAIN-SUFFIX, sucodb.com
 DOMAIN-SUFFIX, sunjianhao.com
@@ -5522,7 +5563,6 @@ DOMAIN-SUFFIX, b1.c1km4.com
 DOMAIN-SUFFIX, ad.cacafly.com
 DOMAIN-SUFFIX, vip.cainiaofx.com
 DOMAIN-SUFFIX, apollo.caixin.com
-DOMAIN-SUFFIX, gg.caixin.com
 DOMAIN-SUFFIX, logstat.caixin.com
 DOMAIN-SUFFIX, promote.caixin.com
 DOMAIN-SUFFIX, ad.caiyunapp.com
